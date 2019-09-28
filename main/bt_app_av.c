@@ -140,7 +140,7 @@ static void bt_av_hdl_avrc_evt(uint16_t event, void *p_param)
     case ESP_AVRC_CT_CONNECTION_STATE_EVT: {
         uint8_t *bda = rc->conn_stat.remote_bda;
         ESP_LOGI(BT_AV_TAG, "avrc conn_state evt: state %d, feature 0x%x, [%02x:%02x:%02x:%02x:%02x:%02x]",
-                           rc->conn_stat.connected, rc->conn_stat.feat_mask, bda[0], bda[1], bda[2], bda[3], bda[4], bda[5]);
+                           rc->conn_stat.connected, rc->rmt_feats.feat_mask, bda[0], bda[1], bda[2], bda[3], bda[4], bda[5]);
         break;
     }
     case ESP_AVRC_CT_PASSTHROUGH_RSP_EVT: {
